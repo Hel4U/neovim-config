@@ -103,6 +103,14 @@ return packer.startup(function(use)
 	-- terminal setup
 	use("akinsho/toggleterm.nvim") -- to manage multiple terminal windows
 
+	-- debugger client setup
+	use("mfussenegger/nvim-dap") -- go client DAP setup
+
+	-- debugger adapter setup
+	use({
+		"leoluz/nvim-dap-go", -- go DAP adapter
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
