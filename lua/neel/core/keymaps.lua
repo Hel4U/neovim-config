@@ -40,3 +40,6 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 
 -- toogleterm
 keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>")
+
+-- dap
+keymap.set("n", "<leader>db", ":lua require'dap'.toggle_breakpoint()<CR>")

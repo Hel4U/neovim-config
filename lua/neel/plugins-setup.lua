@@ -110,6 +110,7 @@ return packer.startup(function(use)
 	use({
 		"leoluz/nvim-dap-go", -- go DAP adapter
 	})
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
 	if packer_bootstrap then
 		require("packer").sync()
