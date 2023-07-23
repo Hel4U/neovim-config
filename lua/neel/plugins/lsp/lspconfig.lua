@@ -4,9 +4,9 @@ if not lspconfig_status then
 	return
 end
 
-local util_status,util = pcall(require, "lspconfig/util")
+local util_status, util = pcall(require, "lspconfig/util")
 if not util_status then
-    return
+	return
 end
 
 -- import cmp-nvim-lsp plugin safely
@@ -85,16 +85,16 @@ lspconfig["gopls"].setup({
 	on_attach = on_attach,
 	cmd = { "gopls" },
 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
-    root_dir=util.root_pattern("go.work","go.mod",".git"),
-     settings = {
-    gopls = {
-      completeUnimported = true,
-      usePlaceholders = true,
-      analyses = {
-        unusedparams = true,
-      },
-    },
-  },
+	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			analyses = {
+				unusedparams = true,
+			},
+		},
+	},
 })
 
 -- configure emmet language server

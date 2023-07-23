@@ -2,20 +2,27 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+-- helper functions
+local function save_buffer()
+	vim.cmd("w")
+end
+
 -- general keymaps
 
 keymap.set("i", "jj", "<ESC>")
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 keymap.set("n", "x", '"_x"')
-keymap.set("n", "<leader>+", "<C-a>")
-keymap.set("n", "<leader>-", "<C-x>")
 
-keymap.set("n", "<leader><leader>", ":w<CR>")
-keymap.set("n", "<leader><leader><leader>", ":wq<CR>")
+keymap.set("n", "C-a", "ggvG", { noremap = true })
+
+keymap.set("n", "<leader><leader>", ":w<CR>", { noremap = true })
+keymap.set("n", "<leader>q", ":q!<CR>", { noremap = true })
+-- keymap.set("n", "<leader><leader><leader>", ":wq<CR>", { noremap = true })
 
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- split window equal width
+keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
